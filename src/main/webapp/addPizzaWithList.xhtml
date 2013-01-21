@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html"
+template="/templates/default.xhtml"
+xmlns:a4j="http://richfaces.org/a4j"
+xmlns:rich="http://richfaces.org/rich">
+
+
+<ui:define name="content">
+<h:form id="pizzaform">
+<h:panelGrid columns="6">
+
+<h:outputText value="#{msg.pizzaFirstNameLabel}" />
+<h:inputText id="name" value="#{pizzaBean.pizza.firstName}" />
+<h:outputText value=" " />
+<h:outputText value="Spis Pizz:" />
+<h:outputText value="Skladniki:" />
+<h:outputText value="Cena:" />
+
+<h:outputText value="#{msg.pizzaPizzaNameLabel}" />
+<h:inputText id="yob" value="#{pizzaBean.pizza.pizzaName}" />
+<h:outputText value=" " />
+<h:outputText value="Margarita" />
+<h:outputText value="Sos, Ser, Pieczarki"/>
+<h:outputText value="12 zl" />
+
+
+<h:outputText value="#{msg.pizzaPhoneNumberLabel}" />
+<h:inputText id="phone" value="#{pizzaBean.pizza.phoneNumber}" />
+<h:outputText value=" " />
+<h:outputText value="Capricossa" />
+<h:outputText value="Sos, Ser, Pieczarki,Szynka"/>
+<h:outputText value="13 zl" />
+
+
+
+<h:outputText value="#{msg.pizzaAdresLabel}" />
+<h:inputText id="adres" value="#{pizzaBean.pizza.adres}" />
+<h:outputText value=" " />
+<h:outputText value="Salami" />
+<h:outputText value="Sos, Ser, Salami, Cebula"/>
+<h:outputText value="14 zl" />
+
+<h:outputText value="#{msg.pizzaDateToGetLabel}" />
+<rich:calendar value="#{pizzaBean.pizza.dateToGet}"
+					id="calendar" datePattern="dd.MM.yyyy" showApplyButton="#{true}"
+					cellWidth="24px" cellHeight="22px" style="width:200px">
+					<a4j:ajax render="messages" execute="@this" />
+</rich:calendar>
+<h:outputText value=" " />
+<h:outputText value="Pepperoni" />
+<h:outputText value="Sos, Ser, Salami, Papryka"/>
+<h:outputText value="15 zl" />
+
+<h:outputText value=" " />
+<h:outputText value=" " />
+<h:outputText value=" " />
+<h:outputText value="Bolognese" />
+<h:outputText value="Sos, Ser, Salami, Papryka, Sos bolognese"/>
+<h:outputText value="16 zl" />
+
+				
+</h:panelGrid>
+
+<h:commandButton value="#{msg.pizzaFormOKButton}"
+action="#{pizzaBean.addPizza}" />
+
+<h:panelGrid>
+<h:messages showDetail="#{true}" showSummary="#{false}" />
+</h:panelGrid>
+
+</h:form>
+</ui:define>
+</ui:composition>
