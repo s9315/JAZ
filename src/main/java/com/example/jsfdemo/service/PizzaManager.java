@@ -11,7 +11,7 @@ import com.example.jsfdemo.domain.Pizza;
 public class PizzaManager {
 	private List<Pizza> db = new ArrayList<Pizza>();
 
-	public void addPerson(Pizza pizza) {
+	public void addPizza(Pizza pizza) {
 		Pizza newPizza = new Pizza();
 
 		newPizza.setFirstName(pizza.getFirstName());

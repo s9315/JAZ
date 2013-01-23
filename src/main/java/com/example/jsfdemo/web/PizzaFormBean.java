@@ -48,7 +48,7 @@ return pizzas;
 
 //Actions
 public String addPizza() {
-pm.addPerson(pizza);
+pm.addPizza(pizza);
 return "showPizzas";
 //return null;
 }
